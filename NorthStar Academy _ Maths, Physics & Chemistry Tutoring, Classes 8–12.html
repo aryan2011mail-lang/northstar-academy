@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NorthStar Academy | Maths, Physics & Chemistry Tutoring, Classes 8–12</title>
+<meta name="description" content="NorthStar Academy offers focused tutoring in Mathematics, Physics and Chemistry for students in Classes 8 to 12.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c1224; --surface:#141c36; --line:#26315a; --text:#e9ecf6; --muted:#9aa5c7;
+  --star:#f4c95d; --star-ink:#1a1400; --blue:#7aa2ff;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'DM Sans','Segoe UI',system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--star);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.75rem,4vw,2.5rem);margin-bottom:.75rem}
+h3{font-size:1.25rem;margin-bottom:.4rem}
+p{margin:0 0 1rem;max-width:62ch}
+section{padding:4.5rem 0}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(12,18,36,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:700 1.2rem var(--display);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.brand svg{width:22px;height:22px}
+nav{display:flex;align-items:center;gap:1.4rem}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--star);color:var(--star-ink);font:700 1rem var(--display);padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(244,201,93,.28)}
+.bar .btn.sm.away{opacity:0;visibility:hidden;pointer-events:none}
+.btn.sm{transition:opacity .2s,visibility .2s,transform .15s,box-shadow .15s;padding:.5rem 1.1rem;font-size:.9rem;color:var(--star-ink)}
+nav a.btn{color:var(--star-ink)}
+@media(max-width:700px){nav .hide{display:none}nav{gap:.8rem}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:5rem 0 5.5rem}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.8rem,9vw,5.6rem);max-width:12ch}
+.hero p.lead{font-size:1.2rem;color:var(--muted);margin:1.4rem 0 2rem;max-width:52ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.ghost{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.ghost:hover{border-color:var(--star)}
+.sky{position:absolute;right:-60px;top:0;width:min(640px,95vw);height:100%;opacity:.9}
+.twinkle{animation:tw 3.5s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.35}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.twinkle{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+/* subjects */
+.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.6rem}
+.ico{width:60px;height:60px;border-radius:16px;background:rgba(244,201,93,.1);display:grid;place-items:center;margin-bottom:1.1rem}
+.ico svg{width:36px;height:36px}
+.card p{color:var(--muted);margin:0}
+.classes{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem;align-items:center}
+.classes span.label{color:var(--muted);margin-right:.4rem}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.35rem 1rem;font-weight:500}
+
+/* why */
+.why{background:var(--surface);border-block:1px solid var(--line)}
+.points{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 3rem;margin-top:2.2rem}
+.points div{border-left:3px solid var(--star);padding-left:1.1rem}
+.points p{color:var(--muted);margin:0}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about blockquote{margin:0;font:500 1.5rem/1.35 var(--display);color:var(--blue);border-left:3px solid var(--line);padding-left:1.2rem}
+
+/* contact */
+.contact{background:linear-gradient(180deg,var(--bg),#101a3a)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+.info .card a{color:var(--text);text-decoration:none;font-weight:500;word-break:break-word}
+.info .card a:hover{color:var(--star)}
+.info .card h3{font-size:1rem;color:var(--muted);font-family:var(--body);font-weight:500;letter-spacing:0}
+.cta{text-align:left}
+
+footer{border-top:1px solid var(--line);padding:1.6rem 0;color:var(--muted);font-size:.9rem}
+
+/* sticky mobile enquire */
+@media(max-width:800px){
+  section{padding:3.2rem 0}
+  .subjects,.points,.about,.info{grid-template-columns:1fr}
+  .about{gap:1.5rem}
+  .sky{opacity:.45;right:-120px}
+}
+
+/* enquiry dialog */
+body:has(dialog[open]){overflow:hidden}
+dialog{width:min(460px,calc(100% - 1.5rem));max-height:calc(100dvh - 1.5rem);margin:auto;overflow:auto;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:22px;padding:0;box-shadow:0 30px 80px rgba(0,0,0,.65)}
+dialog::backdrop{background:rgba(5,8,18,.78);backdrop-filter:blur(4px)}
+.dlg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.6rem 1.6rem 0}
+.dlg-head h2{font-size:1.6rem;margin:0 0 .25rem}
+.dlg-head p{color:var(--muted);margin:0;font-size:.97rem}
+.x{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:1.3rem;line-height:1;cursor:pointer}
+.x:hover{color:var(--text);border-color:var(--muted)}
+#enq-form{padding:1.3rem 1.6rem 1.6rem}
+.field{margin-bottom:1.1rem;border:0;padding:0;min-width:0}
+.field label,.field legend{display:block;font-weight:500;margin-bottom:.4rem;font-size:.93rem;padding:0}
+.field .opt{color:var(--muted);font-weight:400}
+.field input[type=text],.field input[type=tel],.field select,.field textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem;font:inherit;font-size:1rem}
+.field select{appearance:none;-webkit-appearance:none;padding-right:2.4rem;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%239aa5c7' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center}
+.field textarea{min-height:84px;resize:vertical}
+.field ::placeholder{color:#66719a}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--star);outline-offset:1px;border-color:var(--star)}
+.field input:user-invalid,.field select:user-invalid{border-color:#ff8a8a}
+.picks{display:flex;flex-wrap:wrap;gap:.5rem}
+.pick{position:relative}
+.pick input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pick span{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-weight:500;font-size:.95rem}
+.pick span::before{content:"";width:16px;height:16px;border-radius:5px;border:1.5px solid var(--muted)}
+.pick input:checked+span{background:rgba(244,201,93,.14);border-color:var(--star);color:var(--star)}
+.pick input:checked+span::before{background:var(--star) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%231a1400' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;border-color:var(--star)}
+.pick input:focus-visible+span{outline:3px solid var(--star);outline-offset:2px}
+.err{color:#ff9a9a;font-size:.88rem;margin:.45rem 0 0;min-height:0}
+.actions{display:flex;flex-direction:column;gap:.5rem;margin-top:1.4rem}
+.actions .btn{width:100%;text-align:center}
+.link{background:none;border:0;color:var(--muted);font:inherit;padding:.6rem;cursor:pointer}
+.link:hover{color:var(--text)}
+.done{text-align:center;padding:2.4rem 1.6rem 1.8rem}
+.done svg{width:60px;height:60px;margin-bottom:.9rem}
+.done h2{font-size:1.7rem}
+.done p{margin:.6rem auto 1.5rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="NorthStar Academy home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#f4c95d" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+      NorthStar Academy
+    </a>
+    <nav aria-label="Main">
+      <a class="hide" href="#subjects">Subjects</a>
+      <a class="hide" href="#why">Why us</a>
+      <a class="hide" href="#about">About</a>
+      <a class="hide" href="#contact">Contact</a>
+      <button type="button" class="btn sm" data-enquire>Enquire Now</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="sky" viewBox="0 0 640 520" aria-hidden="true" fill="none">
+      <g stroke="#26315a" stroke-width="1.2">
+        <path d="M470 120L380 210L300 190L230 280L150 300"/>
+        <path d="M470 120L540 200L520 300"/>
+      </g>
+      <g fill="#9aa5c7">
+        <circle class="twinkle" cx="380" cy="210" r="3"/>
+        <circle class="twinkle" style="animation-delay:.8s" cx="300" cy="190" r="2.5"/>
+        <circle class="twinkle" style="animation-delay:1.6s" cx="230" cy="280" r="3"/>
+        <circle class="twinkle" style="animation-delay:2.2s" cx="150" cy="300" r="2"/>
+        <circle class="twinkle" style="animation-delay:1.1s" cx="540" cy="200" r="2.5"/>
+        <circle class="twinkle" style="animation-delay:2.8s" cx="520" cy="300" r="2"/>
+      </g>
+      <circle cx="470" cy="120" r="46" fill="#f4c95d" opacity=".08"/>
+      <path fill="#f4c95d" d="M470 84l7 29 29 7-29 7-7 29-7-29-29-7 29-7z"/>
+    </svg>
+    <div class="wrap">
+      <h1>NorthStar Academy</h1>
+      <p class="lead">Small-group tuition in Mathematics, Physics and Chemistry for students in Classes 8 to 12. We help students understand the ideas, not just memorise the answers.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn" id="hero-enquire" data-enquire>Enquire Now</button>
+        <a class="ghost" href="#subjects">See what we teach</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects">
+    <div class="wrap">
+      <h2>What we teach</h2>
+      <p>Three core subjects, taught from the basics up and matched to what each class needs in school and in board exams.</p>
+      <div class="subjects">
+        <div class="card"><div class="ico"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="12" y="6" width="40" height="52" rx="8" fill="#f4c95d" fill-opacity=".18" stroke="#f4c95d" stroke-width="3"/><rect x="19" y="13" width="26" height="11" rx="3" fill="#f4c95d"/><g fill="#7aa2ff"><circle cx="22" cy="34" r="3"/><circle cx="32" cy="34" r="3"/><circle cx="42" cy="34" r="3"/><circle cx="22" cy="44" r="3"/><circle cx="32" cy="44" r="3"/><circle cx="42" cy="44" r="3"/></g></svg></div><h3>Mathematics</h3><p>Algebra, geometry, trigonometry, calculus and statistics, built up step by step.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="#7aa2ff" stroke-width="3"><ellipse cx="32" cy="32" rx="27" ry="11"/><ellipse cx="32" cy="32" rx="27" ry="11" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="27" ry="11" transform="rotate(120 32 32)"/></g><circle cx="32" cy="32" r="6.5" fill="#f4c95d"/></svg></div><h3>Physics</h3><p>Mechanics, electricity, optics and modern physics, explained with real examples.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M20 42h24l8 11q3 5-3 5H15q-6 0-3-5z" fill="#f4c95d"/><path d="M25 7h14M27 7v18L11 52q-3 6 4 6h34q7 0 4-6L37 25V7" stroke="#f4c95d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="29" cy="49" r="2.6" fill="#0c1224"/><circle cx="38" cy="52" r="2" fill="#0c1224"/></svg></div><h3>Chemistry</h3><p>Physical, organic and inorganic chemistry, with clear methods for numericals.</p></div>
+      </div>
+      <div class="classes" role="list" aria-label="Classes offered">
+        <span class="label">Classes</span>
+        <span class="chip" role="listitem">8</span><span class="chip" role="listitem">9</span><span class="chip" role="listitem">10</span><span class="chip" role="listitem">11</span><span class="chip" role="listitem">12</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="why">
+    <div class="wrap">
+      <h2>Why students choose us</h2>
+      <div class="points">
+        <div><h3>Small batches</h3><p>Every student gets attention, and questions are never skipped to keep up with the syllabus.</p></div>
+        <div><h3>Concepts first</h3><p>We explain why a method works, so students can handle questions they haven't seen before.</p></div>
+        <div><h3>Regular practice and tests</h3><p>Weekly practice and short tests show exactly where a student stands and what to work on.</p></div>
+        <div><h3>Updates for parents</h3><p>Parents hear about progress and concerns regularly, not just at exam time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About NorthStar</h2>
+        <p>NorthStar Academy is a small tutoring service for school students. We started with one idea: every student can do well in science and maths when someone explains it clearly and patiently.</p>
+        <p>Our teachers focus on building confidence along with marks, so students feel ready for exams and for what comes after school.</p>
+      </div>
+      <blockquote>A good teacher gives students a fixed point to steer by, like the star we are named after.</blockquote>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p>Tell us your child's class and subjects, and we'll reply with batch timings and fees.</p>
+      <div class="info">
+        <div class="card"><h3>Phone</h3><a href="tel:+919876543210">+91 98765 43210</a></div>
+        <div class="card"><h3>Email</h3><a href="mailto:hello@northstaracademy.example">hello@northstaracademy.example</a></div>
+        <div class="card"><h3>Location</h3><a href="https://www.google.com/maps/search/?api=1&query=Shimla%2C+Himachal+Pradesh%2C+India" target="_blank" rel="noopener">Shimla, Himachal Pradesh, India</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 NorthStar Academy. All rights reserved.</div>
+</footer>
+
+
+<dialog id="enquiry" aria-labelledby="enq-title">
+  <div id="enq-form-view">
+    <div class="dlg-head">
+      <div><h2 id="enq-title">Enquire now</h2><p>Share a few details and we'll get back to you.</p></div>
+      <button type="button" class="x" data-close aria-label="Close">&times;</button>
+    </div>
+    <form id="enq-form" novalidate>
+      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+      <div class="field"><label for="f-class">Student's class</label>
+        <select id="f-class" name="class" required>
+          <option value="" selected disabled>Select class</option>
+          <option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
+        </select></div>
+      <fieldset class="field"><legend>Subjects interested in <span class="opt">(choose one or more)</span></legend>
+        <div class="picks">
+          <label class="pick"><input type="checkbox" name="subject" value="Mathematics"><span>Mathematics</span></label>
+          <label class="pick"><input type="checkbox" name="subject" value="Physics"><span>Physics</span></label>
+          <label class="pick"><input type="checkbox" name="subject" value="Chemistry"><span>Chemistry</span></label>
+        </div>
+        <p class="err" id="subject-err" role="alert" hidden>Please choose at least one subject.</p>
+      </fieldset>
+      <div class="field"><label for="f-phone">Parent or student phone number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" pattern="[0-9+\s\-]{7,16}" title="Enter a valid phone number, for example +91 98765 43210" required></div>
+      <div class="field"><label for="f-msg">Message <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Anything we should know?"></textarea></div>
+      <div class="actions">
+        <button type="submit" class="btn">Submit enquiry</button>
+        <button type="button" class="link" data-close>Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div id="enq-done" class="done" hidden>
+    <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="26" stroke="#f4c95d" stroke-width="3"/><path d="M17 29l8 8 14-16" stroke="#f4c95d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2>Thank you!</h2>
+    <p role="status">Thank you! We've received your enquiry. Our team will contact you shortly.</p>
+    <button type="button" class="btn" data-close>Back to site</button>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('enquiry'),
+      form=document.getElementById('enq-form'),
+      formView=document.getElementById('enq-form-view'),
+      done=document.getElementById('enq-done'),
+      err=document.getElementById('subject-err'),
+      boxes=form.querySelectorAll('input[name=subject]');
+  function open(){
+    form.reset(); err.hidden=true;
+    formView.hidden=false; done.hidden=true;
+    dlg.showModal();
+    dlg.scrollTop=0;
+  }
+  document.querySelectorAll('[data-enquire]').forEach(function(b){b.addEventListener('click',open)});
+  dlg.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){dlg.close()})});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  boxes.forEach(function(b){b.addEventListener('change',function(){err.hidden=true})});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var picked=Array.prototype.some.call(boxes,function(b){return b.checked});
+    if(!form.checkValidity()){form.reportValidity();return}
+    if(!picked){err.hidden=false;boxes[0].focus();return}
+    /* Demo only: nothing is sent anywhere. A real backend would receive the form data here. */
+    formView.hidden=true; done.hidden=false;
+    done.querySelector('button').focus();
+  });
+  /* Show the header button only once the hero button has scrolled out of view */
+  var hb=document.querySelector('.bar .btn.sm'), hero=document.getElementById('hero-enquire');
+  if(hb&&hero&&'IntersectionObserver' in window){
+    hb.classList.add('away');
+    new IntersectionObserver(function(en){hb.classList.toggle('away',en[0].isIntersecting)}).observe(hero);
+  }
+})();
+</script>
+</body>
+</html>
